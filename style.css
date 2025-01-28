@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.button i {
+    font-size: 20px;
+    color: #00bcd4;
+}
+
+.button:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#music-toggle {
+    top: 80px;
+}
+
+audio {
+    width: 50px; /* Ukuran kecil untuk hanya menampilkan tombol */
+    height: 50px; /* Ukuran kecil untuk hanya menampilkan tombol */
+    overflow: hidden; /* Sembunyikan elemen yang tidak terlihat */
+    position: relative;
+}
+
+/* Sembunyikan semua kontrol yang tidak diinginkan */
+audio::-webkit-media-controls {
+    display: none;
+}
+
+audio::-webkit-media-controls-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    display: block;
+}
+
+/* Jika ingin menyembunyikan tombol lainnya (seperti progress bar) */
+audio::-webkit-media-controls-timeline {
+    display: none;
+}
+
+audio::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+#play-pause {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+.typing-text {
+    font-size: 27px;
+    font-family: monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #333;
+    animation: typing 5s infinite;
+    text-align: center;
+    margin: 0 auto;
+    width: 0;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%
+    }
+}
+
+header {
+    box-shadow: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 150%;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    color: cyan;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 50px;
+    text-align: center;
+}
+
+footer {
+    color: #00bcd4;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.project {
+    margin: auto;
+    background-color: #00bcd4;
+    padding: 15px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 15px 25px rgba(15, 15, 15, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.contact-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #00bcd4;
+    width: 180px;
+    justify-content: center;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:hover {
+    color: #00bcd4;
+    background-color: #f8f8f8;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
