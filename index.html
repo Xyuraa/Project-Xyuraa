@@ -1,93 +1,460 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Xyura</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <audio id="background-music" controls>
-        <source src="music.mp3" type="audio/mp3" class="tab">
-    </audio>
-    
-    <button id="dark-mode-toggle" class="button" aria-label="Toggle dark mode">
-        <i class="fas fa-sun"></i>
-    </button>
-    
-    <button id="music-toggle" class="button" aria-label="Toggle music">
-        <i class="fas fa-play"></i>
-    </button>
-    
-    
-    <!-- Navbar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skill">Skill</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2 class="typing-text">Selamat Datang Di Portofolio Xyura</h2>
-        <p>Ini adalah web portofolio buatan saya, Xyura.</p>
-    </section>
+<!-- ========================
+     LOADER
+========================= -->
+<div id="loader">
+  <div class="ld-lines">
+    <div class="ld-line"></div>
+    <div class="ld-line"></div>
+    <div class="ld-line"></div>
+  </div>
+  <div class="ld-logo" id="ld-txt">INITIALIZING</div>
+  <div class="ld-bar-wrap">
+    <div class="ld-bar" id="ld-bar"></div>
+  </div>
+  <div class="ld-pct" id="ld-pct">0%</div>
+</div>
 
-    <section id="about">
-        <h2>Tentang Saya</h2>
-        <p>Saya adalah seorang pelajar yang ingin menjadi programmer dan menciptakan hal baru di dunia ini.</p>
-    </section>
+<!-- CURSOR -->
+<div id="c-dot"></div>
+<div id="c-ring"></div>
 
-    <section id="skill" class="section">
-        <div class="container">
-            <h2>Skill Saya</h2>
-            <div class="project-container">
-                <div class="project">
-                    <h3>Front-End</h3>
-                    <p>Saya bisa bahasa pemrograman Node.js, HTML, dan CSS sedikit-sedikit.</p>
-                </div>
-                <div class="project">
-                    <h3>Hacking</h3>
-                    <p>Saya bisa pentest aplikasi, website, komputer, atau meretas perangkat lain.</p>
-                </div>
-                <div class="project">
-                    <h3>Jaringan</h3>
-                    <p>Saya paham tentang mikrotik</p>
-                </div>
-            </div>
+<!-- NOISE OVERLAY -->
+<div id="noise"></div>
+
+<!-- ========================
+     NAV
+========================= -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">&lt;<span class="sl">/</span>dev&gt;</a>
+  <ul class="nav-links">
+    <li><a href="#about"    data-t="About">About</a></li>
+    <li><a href="#skills"   data-t="Skills">Skills</a></li>
+    <li><a href="#projects" data-t="Projects">Projects</a></li>
+    <li><a href="#contact"  data-t="Contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ========================
+     HERO
+========================= -->
+<section id="hero">
+  <div class="h-grid"></div>
+  <canvas id="pc"></canvas>
+  <div class="aurora"></div>
+
+  <div class="h-content">
+    <div class="h-eye">
+      <div class="h-ping"></div>
+      <span class="h-eye-txt">Open to Collab</span>
+      <em class="h-eye-em">· Developer &amp; Pentester</em>
+    </div>
+
+    <h1 class="h-headline">
+      <span class="h-line">
+        <span class="h-word">Build.</span>
+      </span>
+      <span class="h-line">
+        <span class="h-word">
+          <span class="h-outline" data-t="Hack.">Hack.</span>
+        </span>
+      </span>
+    </h1>
+
+    <p class="h-sub">
+      Crafting <span class="hl">tools</span>, breaking <span class="hl">limits</span>,
+      and shipping <span class="hl">real stuff</span>.<br>
+      From bots to security — I get it done.
+    </p>
+
+    <div class="h-cta">
+      <a href="#projects" class="btn-m btn-fill"><span>View Projects →</span></a>
+      <a href="#contact"  class="btn-m btn-out">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="h-scroll">
+    <div class="sv"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ========================
+     MARQUEE
+========================= -->
+<div class="marq">
+  <div class="marq-track">
+    <span class="marq-item"><strong>HTML</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>CSS</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>JavaScript</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Node.js</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Firebase</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Metasploit</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Nmap</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>SQLi</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Baileys</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Linux</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Git</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>VS Code</strong><span class="mdot"></span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="marq-item"><strong>HTML</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>CSS</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>JavaScript</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Node.js</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Firebase</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Metasploit</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Nmap</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>SQLi</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Baileys</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Linux</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>Git</strong><span class="mdot"></span></span>
+    <span class="marq-item"><strong>VS Code</strong><span class="mdot"></span></span>
+  </div>
+</div>
+
+<!-- ========================
+     ABOUT
+========================= -->
+<section id="about">
+  <div class="slabel" data-n="01">About Me</div>
+  <h2 class="stitle">
+    <span class="sw">Who</span>&nbsp;
+    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
+    <span class="sw" style="transition-delay:.2s">Am.</span>
+  </h2>
+
+  <div class="ab-grid">
+    <div class="ab-copy rvl">
+      <p>
+        Hey! Gue seorang <span class="hl">developer</span> sekaligus
+        <span class="hl">security enthusiast</span>. Suka bikin tools yang
+        beneran useful, bukan cuma buat pamer.
+      </p>
+      <p>
+        Di sisi development, gue fokus di <span class="hl">frontend web</span>
+        dan <span class="hl">bot automation</span>. Di sisi security, gue bisa
+        <span class="hl2">pentest hardware & web</span> — laptop, HP, PC, sampe
+        aplikasi web.
+      </p>
+      <p>
+        Prinsip gue simpel: <span class="hl">build cool things</span>,
+        understand how they break, then <span class="hl">build them better</span>.
+      </p>
+    </div>
+
+    <div class="stats rvr">
+      <div class="sc">
+        <span class="sn" data-target="2">0</span>
+        <span class="sl-">Years Experience</span>
+      </div>
+      <div class="sc">
+        <span class="sn" data-target="15">0</span>
+        <span class="sl-">Projects Shipped</span>
+      </div>
+      <div class="sc">
+        <span class="sn" data-target="5">0</span>
+        <span class="sl-">Tech Stacks</span>
+      </div>
+      <div class="sc">
+        <span class="sn">∞</span>
+        <span class="sl-">Lines of Code</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SKILLS
+========================= -->
+<section id="skills">
+  <div class="slabel" data-n="02">Skills</div>
+  <h2 class="stitle">
+    <span class="sw">What</span>&nbsp;
+    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
+    <span class="sw" style="transition-delay:.2s">Use.</span>
+  </h2>
+
+  <div class="sk-grid">
+
+    <!-- Frontend -->
+    <div class="sk-card rv">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">🌐</span>
+      <div class="sk-name">Frontend</div>
+      <div class="sk-desc">
+        Bikin UI yang clean dan responsive. Fokus di vanilla web stack — no framework needed.
+      </div>
+      <div class="tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+      </div>
+    </div>
+
+    <!-- Backend / Bot -->
+    <div class="sk-card rv" style="transition-delay:.08s">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">⚙️</span>
+      <div class="sk-name">Backend &amp; Bot Dev</div>
+      <div class="sk-desc">
+        Bikin bot WhatsApp dan API server yang scalable dengan Node.js.
+      </div>
+      <div class="tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">Baileys</span>
+        <span class="tag">REST API</span>
+      </div>
+    </div>
+
+    <!-- Database -->
+    <div class="sk-card rv" style="transition-delay:.16s">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">🗄️</span>
+      <div class="sk-name">Database</div>
+      <div class="sk-desc">
+        Menyimpan dan mengelola data secara realtime dengan Firebase.
+      </div>
+      <div class="tags">
+        <span class="tag">Firebase</span>
+        <span class="tag">Firestore</span>
+        <span class="tag">Realtime DB</span>
+      </div>
+    </div>
+
+    <!-- Pentesting -->
+    <div class="sk-card rv" style="transition-delay:.24s">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">🔓</span>
+      <div class="sk-name">Pentesting</div>
+      <div class="sk-desc">
+        Pengujian keamanan hardware (laptop, HP, PC) dan web menggunakan berbagai tools ofensif.
+      </div>
+      <div class="tags">
+        <span class="tag">Metasploit</span>
+        <span class="tag">Nmap</span>
+        <span class="tag">SQLi</span>
+        <span class="tag">Burp Suite</span>
+        <span class="tag">Hydra</span>
+        <span class="tag">Aircrack-ng</span>
+      </div>
+    </div>
+
+    <!-- Dev Tools -->
+    <div class="sk-card rv" style="transition-delay:.32s">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">🛠️</span>
+      <div class="sk-name">Dev Tools</div>
+      <div class="sk-desc">
+        Living in the terminal, breathing Git, dan shipping dengan workflow yang rapi.
+      </div>
+      <div class="tags">
+        <span class="tag">Git</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">Linux</span>
+        <span class="tag">NPM</span>
+      </div>
+    </div>
+
+    <!-- Cloud & Deploy -->
+    <div class="sk-card rv" style="transition-delay:.4s">
+      <div class="sk-shine"></div>
+      <span class="sk-ico">☁️</span>
+      <div class="sk-name">Cloud &amp; Deploy</div>
+      <div class="sk-desc">
+        Deploy apps yang tetap hidup. Zero downtime is the goal.
+      </div>
+      <div class="tags">
+        <span class="tag">VPS</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">Cloudflare</span>
+        <span class="tag">Nginx</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================
+     PROJECTS
+========================= -->
+<section id="projects">
+  <div class="slabel" data-n="03">Projects</div>
+  <h2 class="stitle">
+    <span class="sw">What</span>&nbsp;
+    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
+    <span class="sw" style="transition-delay:.2s">Built.</span>
+  </h2>
+
+  <div class="pj-grid">
+
+    <!-- Project 1: WhatsApp Bot -->
+    <div class="pj-card rv">
+      <div class="pj-thumb">
+        <div class="pj-bg t1"><div class="pj-gl"></div></div>
+        <div class="pj-icon">🤖</div>
+        <div class="pj-num">#001</div>
+        <div class="pj-cl"></div>
+        <div class="pj-cr"></div>
+      </div>
+      <div class="pj-body">
+        <div class="pj-title">WhatsApp Bot</div>
+        <div class="pj-desc">
+          Bot WA multi-fitur lengkap. Dari tools harian sampai fitur yang… menarik.
         </div>
-    </section>
-
-    <section id="contact" class="section bg-lightblue">
-        <div class="container">
-            <h2>Kontak Saya</h2>
-            <p>Silakan hubungi saya jika Anda tertarik untuk bekerja bersama atau berdiskusi lebih lanjut.</p>
-            <div class="contact-info">
-                <a href="mailto:bott8819@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-item">
-                    <i class="fas fa-envelope"></i> Gmail
-                </a>
-                <a href="https://github.com/Xyuraa" target="_blank" rel="noopener noreferrer" class="contact-item">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.instagram.com/Xyura011" target="_blank" rel="noopener noreferrer" class="contact-item">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://wa.me/6283176305101" target="_blank" rel="noopener noreferrer" class="contact-item">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+        <ul class="pj-features">
+          <li>AI Chat (Groq / Gemini)</li>
+          <li>Remove Background otomatis</li>
+          <li>Cek teknik / info device</li>
+          <li>Spam NGL (anonymously)</li>
+          <li>Password Generator</li>
+          <li>Banned &amp; Unbanned WA</li>
+          <li>Brute Force file ZIP</li>
+          <li>Admin panel + daily limits</li>
+        </ul>
+        <div class="pj-foot">
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Baileys</span>
+            <span class="tag">HuggingFace</span>
+          </div>
+          <a href="#" class="pj-link">View <span class="pj-arr">↗</span></a>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Portofolio Xyura. Semua hak dilindungi.</p>
-    </footer>
+    <!-- Project 2: Mobile App -->
+    <div class="pj-card rv" style="transition-delay:.12s">
+      <div class="pj-thumb">
+        <div class="pj-bg t2"><div class="pj-gl"></div></div>
+        <div class="pj-icon">📱</div>
+        <div class="pj-num">#002</div>
+        <div class="pj-cl"></div>
+        <div class="pj-cr"></div>
+      </div>
+      <div class="pj-body">
+        <div class="pj-title">Mobile App Tools</div>
+        <div class="pj-desc">
+          Aplikasi Android dengan kumpulan tools harian yang praktis dan fast.
+        </div>
+        <ul class="pj-features">
+          <li>Cek teknik device (RAM, CPU, Baterai)</li>
+          <li>Spam NGL anonymous</li>
+          <li>Password Generator kuat</li>
+          <li>Info &amp; status nomor WA</li>
+          <li>Brute force ZIP lokal</li>
+          <li>Dark mode &amp; ringan</li>
+        </ul>
+        <div class="pj-foot">
+          <div class="tags">
+            <span class="tag">Firebase</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Android</span>
+          </div>
+          <a href="#" class="pj-link">View <span class="pj-arr">↗</span></a>
+        </div>
+      </div>
+    </div>
 
-    <script src="index.js"></script>
+  </div>
+</section>
+
+<!-- ========================
+     CONTACT
+========================= -->
+<section id="contact">
+  <div class="slabel" data-n="04">Contact</div>
+  <h2 class="stitle">
+    <span class="sw">Let's</span>&nbsp;
+    <span class="sw" style="transition-delay:.12s">Build.</span>
+  </h2>
+
+  <div class="ct-wrap">
+    <p class="ct-intro rv">
+      Ada project keren? Mau collab? Atau sekadar ngobrol soal tech &amp; security?<br>
+      Reach out — gue selalu open buat hal yang menarik.
+    </p>
+
+    <div class="soc-list rv">
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/yourNumber" target="_blank" class="soc-row">
+        <div class="soc-l">
+          <span class="soc-ico">💬</span>
+          <div>
+            <div class="soc-name">WhatsApp</div>
+            <div class="soc-handle">+62 xxx-xxxx-xxxx</div>
+          </div>
+        </div>
+        <span class="soc-arr">→</span>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/yourhandle" target="_blank" class="soc-row">
+        <div class="soc-l">
+          <span class="soc-ico">📸</span>
+          <div>
+            <div class="soc-name">Instagram</div>
+            <div class="soc-handle">@yourhandle</div>
+          </div>
+        </div>
+        <span class="soc-arr">→</span>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@yourhandle" target="_blank" class="soc-row">
+        <div class="soc-l">
+          <span class="soc-ico">🎵</span>
+          <div>
+            <div class="soc-name">TikTok</div>
+            <div class="soc-handle">@yourhandle</div>
+          </div>
+        </div>
+        <span class="soc-arr">→</span>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/yourhandle" target="_blank" class="soc-row">
+        <div class="soc-l">
+          <span class="soc-ico">🐙</span>
+          <div>
+            <div class="soc-name">GitHub</div>
+            <div class="soc-handle">@yourhandle</div>
+          </div>
+        </div>
+        <span class="soc-arr">→</span>
+      </a>
+
+    </div>
+
+    <div class="em-box rv">
+      <span class="em-addr">your@email.com</span>
+      <button class="btn-cp" onclick="copyEmail(this)">
+        <span>Copy Email</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     FOOTER
+========================= -->
+<footer>
+  <p>© 2025 <span class="fc">·</span> Designed &amp; Built by You</p>
+  <p>Made with <span class="fc">♥</span> &amp; lots of caffeine</p>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
