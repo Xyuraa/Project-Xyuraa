@@ -6,25 +6,33 @@
   const pct = document.getElementById('ld-pct');
   const txt = document.getElementById('ld-txt');
   const loader = document.getElementById('loader');
+  if (!loader) return;
+
   const msgs = ['INITIALIZING', 'LOADING ASSETS', 'BUILDING UI', 'ALMOST READY'];
   let p = 0, ti = 0;
 
+  function dismiss() {
+    bar.style.width = '100%';
+    pct.textContent = '100%';
+    txt.textContent = 'ALMOST READY';
+    setTimeout(() => {
+      loader.classList.add('ld-exit');
+      setTimeout(() => { loader.style.display = 'none'; }, 900);
+    }, 300);
+  }
+
   const iv = setInterval(() => {
-    p = Math.min(p + Math.random() * 16 + 4, 100);
+    p = Math.min(p + Math.random() * 18 + 6, 100);
     bar.style.width = p + '%';
     pct.textContent = Math.floor(p) + '%';
     if (p > 25 && ti === 0) { txt.textContent = msgs[1]; ti = 1; }
     if (p > 55 && ti === 1) { txt.textContent = msgs[2]; ti = 2; }
     if (p > 80 && ti === 2) { txt.textContent = msgs[3]; ti = 3; }
-    if (p >= 100) {
-      clearInterval(iv);
-      pct.textContent = '100%';
-      setTimeout(() => {
-        loader.classList.add('ld-exit');
-        setTimeout(() => loader.style.display = 'none', 900);
-      }, 400);
-    }
-  }, 80);
+    if (p >= 100) { clearInterval(iv); dismiss(); }
+  }, 60);
+
+  // Failsafe: kalau 3 detik masih stuck, force dismiss
+  setTimeout(() => { clearInterval(iv); dismiss(); }, 3000);
 })();
 
 /* ============================
