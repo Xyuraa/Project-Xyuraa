@@ -211,11 +211,11 @@ if (logo) {
   let busy = false;
   logo.addEventListener('mouseenter', () => {
     if (busy) return; busy = true;
-    sc.set('</dev>').then(() => busy = false);
+    sc.set('</Xyura>').then(() => busy = false);
   });
   logo.addEventListener('mouseleave', () => {
     if (busy) return; busy = true;
-    sc.set('<\u200B/dev>').then(() => busy = false);
+    sc.set('<\u200B/Xyura>').then(() => busy = false);
   });
 }
 
@@ -247,7 +247,7 @@ document.querySelectorAll('.sn[data-target]').forEach(el => cio.observe(el));
    COPY EMAIL
 ============================= */
 function copyEmail(btn) {
-  navigator.clipboard.writeText('your@email.com');
+  navigator.clipboard.writeText('hack1222qq@gmail.com');
   const s = btn.querySelector('span');
   s.textContent = 'Copied! ✓';
   btn.style.cssText = 'background:var(--cyan);color:#000;border-color:var(--cyan)';
