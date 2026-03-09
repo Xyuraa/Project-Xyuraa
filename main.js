@@ -169,56 +169,60 @@ document.querySelectorAll('.rv, .rvl, .rvr').forEach(el => revObs.observe(el));
 /* ============================
    TEXT SCRAMBLE (Nav Logo)
 ============================= */
-class Scramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#@0123456789';
-    this.upd = this.upd.bind(this);
-  }
-  set(txt) {
-    const old = this.el.textContent;
-    const len = Math.max(old.length, txt.length);
-    return new Promise(res => {
-      this.q = [];
-      for (let i = 0; i < len; i++) {
-        const a = old[i] || '', b = txt[i] || '';
-        const s = Math.floor(Math.random() * 22), e = s + Math.floor(Math.random() * 22);
-        this.q.push({ a, b, s, e });
-      }
-      cancelAnimationFrame(this.fr);
-      this.f = 0; this.res = res; this.upd();
-    });
-  }
-  upd() {
-    let out = '', done = 0;
-    for (let i = 0; i < this.q.length; i++) {
-      let { a, b, s, e, ch } = this.q[i];
-      if (this.f >= e) { done++; out += b; }
-      else if (this.f >= s) {
-        if (!ch || Math.random() < 0.28) {
-          ch = this.chars[Math.floor(Math.random() * this.chars.length)];
-          this.q[i].ch = ch;
-        }
-        out += `<span style="color:var(--cyan);opacity:.55">${ch}</span>`;
-      } else { out += a; }
-    }
-    this.el.innerHTML = out;
-    if (done === this.q.length) this.res();
-    else { this.fr = requestAnimationFrame(this.upd); this.f++; }
-  }
-}
-
 const logo = document.querySelector('.nav-logo');
 if (logo) {
-  const sc = new Scramble(logo);
-  let busy = false;
+  const chars = '!#$%^&*-_=+?@0123456789ABCDEF';
+  let busy = false, frameReq;
+
+  // Only scramble the "Xyura" part, keep brackets intact in HTML
+  function scrambleTo(targetWord, onDone) {
+    const current = 'Xyura';
+    const len = Math.max(current.length, targetWord.length);
+    let frame = 0;
+    const queue = Array.from({ length: len }, (_, i) => ({
+      from: current[i] || '',
+      to:   targetWord[i] || '',
+      start: Math.floor(Math.random() * 10),
+      end:   Math.floor(Math.random() * 10) + 12,
+      ch: ''
+    }));
+
+    cancelAnimationFrame(frameReq);
+    function update() {
+      let out = '', done = 0;
+      for (const item of queue) {
+        if (frame >= item.end) {
+          done++;
+          out += item.to;
+        } else if (frame >= item.start) {
+          if (!item.ch || Math.random() < 0.3)
+            item.ch = chars[Math.floor(Math.random() * chars.length)];
+          out += `<span style="color:var(--cyan);opacity:.6">${item.ch}</span>`;
+        } else {
+          out += item.from;
+        }
+      }
+      logo.innerHTML = `&lt;<span class="sl">/</span>${out}&gt;`;
+      if (done === queue.length) {
+        busy = false;
+        if (onDone) onDone();
+      } else {
+        frameReq = requestAnimationFrame(update);
+        frame++;
+      }
+    }
+    update();
+  }
+
   logo.addEventListener('mouseenter', () => {
-    if (busy) return; busy = true;
-    sc.set('</Xyura>').then(() => busy = false);
+    if (busy) return;
+    busy = true;
+    scrambleTo('Xyura');
   });
   logo.addEventListener('mouseleave', () => {
-    if (busy) return; busy = true;
-    sc.set('<\u200B/Xyura>').then(() => busy = false);
+    if (busy) return;
+    busy = true;
+    scrambleTo('Xyura');
   });
 }
 
