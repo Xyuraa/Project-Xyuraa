@@ -10,9 +10,7 @@
 </head>
 <body>
 
-<!-- ========================
-     LOADER
-========================= -->
+<!-- LOADER -->
 <div id="loader">
   <div class="ld-lines">
     <div class="ld-line"></div>
@@ -20,9 +18,7 @@
     <div class="ld-line"></div>
   </div>
   <div class="ld-logo" id="ld-txt">INITIALIZING</div>
-  <div class="ld-bar-wrap">
-    <div class="ld-bar" id="ld-bar"></div>
-  </div>
+  <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
   <div class="ld-pct" id="ld-pct">0%</div>
 </div>
 
@@ -30,12 +26,10 @@
 <div id="c-dot"></div>
 <div id="c-ring"></div>
 
-<!-- NOISE OVERLAY -->
+<!-- NOISE -->
 <div id="noise"></div>
 
-<!-- ========================
-     NAV
-========================= -->
+<!-- NAV -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">&lt;<span class="sl">/</span>Xyura&gt;</a>
   <ul class="nav-links">
@@ -46,53 +40,35 @@
   </ul>
 </nav>
 
-<!-- ========================
-     HERO
-========================= -->
+<!-- HERO -->
 <section id="hero">
   <div class="h-grid"></div>
   <canvas id="pc"></canvas>
   <div class="aurora"></div>
-
   <div class="h-content">
     <div class="h-eye">
       <div class="h-ping"></div>
       <span class="h-eye-txt">Xyura</span>
       <em class="h-eye-em">· Developer &amp; Pentester</em>
     </div>
-
     <h1 class="h-headline">
-      <span class="h-line">
-        <span class="h-word">Build.</span>
-      </span>
-      <span class="h-line">
-        <span class="h-word">
-          <span class="h-outline" data-t="Hack.">Hack.</span>
-        </span>
-      </span>
+      <span class="h-line"><span class="h-word">Build.</span></span>
+      <span class="h-line"><span class="h-word"><span class="h-outline" data-t="Hack.">Hack.</span></span></span>
     </h1>
-
     <p class="h-sub">
       Crafting <span class="hl">tools</span>, breaking <span class="hl">limits</span>,
       and shipping <span class="hl">real stuff</span>.<br>
       From bots to security — I get it done.
     </p>
-
     <div class="h-cta">
       <a href="#projects" class="btn-m btn-fill"><span>View Projects →</span></a>
       <a href="#contact"  class="btn-m btn-out">Get in Touch</a>
     </div>
   </div>
-
-  <div class="h-scroll">
-    <div class="sv"></div>
-    <span>Scroll</span>
-  </div>
+  <div class="h-scroll"><div class="sv"></div><span>Scroll</span></div>
 </section>
 
-<!-- ========================
-     MARQUEE
-========================= -->
+<!-- MARQUEE -->
 <div class="marq">
   <div class="marq-track">
     <span class="marq-item"><strong>HTML</strong><span class="mdot"></span></span>
@@ -109,7 +85,6 @@
     <span class="marq-item"><strong>Linux</strong><span class="mdot"></span></span>
     <span class="marq-item"><strong>Git</strong><span class="mdot"></span></span>
     <span class="marq-item"><strong>VS Code</strong><span class="mdot"></span></span>
-    <!-- duplicate for seamless loop -->
     <span class="marq-item"><strong>HTML</strong><span class="mdot"></span></span>
     <span class="marq-item"><strong>CSS</strong><span class="mdot"></span></span>
     <span class="marq-item"><strong>JavaScript</strong><span class="mdot"></span></span>
@@ -127,211 +102,156 @@
   </div>
 </div>
 
-<!-- ========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 <section id="about">
   <div class="slabel" data-n="01">About Me</div>
   <h2 class="stitle">
-    <span class="sw">Who</span>&nbsp;
-    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
-    <span class="sw" style="transition-delay:.2s">Am.</span>
+    <span class="sw">Who</span>&nbsp;<span class="sw" style="transition-delay:.1s">I</span>&nbsp;<span class="sw" style="transition-delay:.2s">Am.</span>
   </h2>
-
   <div class="ab-grid">
     <div class="ab-copy rvl">
-      <p>
-        Hey! Gue <span class="hl">Xyura</span>, seorang <span class="hl">developer</span> sekaligus
-        <span class="hl">security enthusiast</span>. Suka bikin tools yang
-        beneran useful, bukan cuma buat pamer.
-      </p>
-      <p>
-        Di sisi development, gue fokus di <span class="hl">frontend web</span>
-        dan <span class="hl">bot automation</span>. Di sisi security, gue bisa
-        <span class="hl2">pentest hardware & web</span> — laptop, HP, PC, sampe
-        aplikasi web.
-      </p>
-      <p>
-        Prinsip gue simpel: <span class="hl">build cool things</span>,
-        understand how they break, then <span class="hl">build them better</span>.
-      </p>
+      <p>Hey! Gue <span class="hl">Xyura</span>, seorang <span class="hl">developer</span> sekaligus <span class="hl">security enthusiast</span>. Suka bikin tools yang beneran useful, bukan cuma buat pamer.</p>
+      <p>Di sisi development, gue fokus di <span class="hl">frontend web</span> dan <span class="hl">bot automation</span>. Di sisi security, gue bisa <span class="hl2">pentest hardware &amp; web</span> — laptop, HP, PC, sampe aplikasi web.</p>
+      <p>Prinsip gue simpel: <span class="hl">build cool things</span>, understand how they break, then <span class="hl">build them better</span>.</p>
     </div>
-
     <div class="stats rvr">
-      <div class="sc">
-        <span class="sn" data-target="2">0</span>
-        <span class="sl-">Years Experience</span>
-      </div>
-      <div class="sc">
-        <span class="sn" data-target="15">0</span>
-        <span class="sl-">Projects Shipped</span>
-      </div>
-      <div class="sc">
-        <span class="sn" data-target="5">0</span>
-        <span class="sl-">Tech Stacks</span>
-      </div>
-      <div class="sc">
-        <span class="sn">∞</span>
-        <span class="sl-">Lines of Code</span>
-      </div>
+      <div class="sc"><span class="sn" data-target="2">0</span><span class="sl-">Years Experience</span></div>
+      <div class="sc"><span class="sn" data-target="15">0</span><span class="sl-">Projects Shipped</span></div>
+      <div class="sc"><span class="sn" data-target="5">0</span><span class="sl-">Tech Stacks</span></div>
+      <div class="sc"><span class="sn">∞</span><span class="sl-">Lines of Code</span></div>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     SKILLS
-========================= -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="slabel" data-n="02">Skills</div>
   <h2 class="stitle">
-    <span class="sw">What</span>&nbsp;
-    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
-    <span class="sw" style="transition-delay:.2s">Use.</span>
+    <span class="sw">What</span>&nbsp;<span class="sw" style="transition-delay:.1s">I</span>&nbsp;<span class="sw" style="transition-delay:.2s">Use.</span>
   </h2>
-
   <div class="sk-grid">
 
-    <!-- Frontend -->
     <div class="sk-card rv">
       <div class="sk-shine"></div>
-      <span class="sk-ico">🌐</span>
+      <span class="sk-ico">
+        <!-- Globe / Frontend icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+      </span>
       <div class="sk-name">Frontend</div>
-      <div class="sk-desc">
-        Bikin UI yang clean dan responsive. Fokus di vanilla web stack — no framework needed.
-      </div>
-      <div class="tags">
-        <span class="tag">HTML5</span>
-        <span class="tag">CSS3</span>
-        <span class="tag">JavaScript</span>
-      </div>
+      <div class="sk-desc">Bikin UI yang clean dan responsive. Fokus di vanilla web stack — no framework needed.</div>
+      <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
     </div>
 
-    <!-- Backend / Bot -->
     <div class="sk-card rv" style="transition-delay:.08s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">⚙️</span>
+      <span class="sk-ico">
+        <!-- Server / Backend icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
+          <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+        </svg>
+      </span>
       <div class="sk-name">Backend &amp; Bot Dev</div>
-      <div class="sk-desc">
-        Bikin bot WhatsApp dan API server yang scalable dengan Node.js.
-      </div>
-      <div class="tags">
-        <span class="tag">Node.js</span>
-        <span class="tag">Express</span>
-        <span class="tag">Baileys</span>
-        <span class="tag">REST API</span>
-      </div>
+      <div class="sk-desc">Bikin bot WhatsApp dan API server yang scalable dengan Node.js.</div>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Baileys</span><span class="tag">REST API</span></div>
     </div>
 
-    <!-- Mobile Dev -->
     <div class="sk-card rv" style="transition-delay:.12s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">📱</span>
+      <span class="sk-ico">
+        <!-- Mobile icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+      </span>
       <div class="sk-name">Mobile Dev</div>
-      <div class="sk-desc">
-        Bikin aplikasi Android native pakai Sketchware dengan bahasa Java.
-      </div>
-      <div class="tags">
-        <span class="tag">Java</span>
-        <span class="tag">Sketchware</span>
-        <span class="tag">Android</span>
-      </div>
+      <div class="sk-desc">Bikin aplikasi Android native pakai Sketchware dengan bahasa Java.</div>
+      <div class="tags"><span class="tag">Java</span><span class="tag">Sketchware</span><span class="tag">Android</span></div>
     </div>
 
-    <!-- Database -->
     <div class="sk-card rv" style="transition-delay:.16s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">🗄️</span>
+      <span class="sk-ico">
+        <!-- Database icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        </svg>
+      </span>
       <div class="sk-name">Database</div>
-      <div class="sk-desc">
-        Menyimpan dan mengelola data secara realtime dengan Firebase.
-      </div>
-      <div class="tags">
-        <span class="tag">Firebase</span>
-        <span class="tag">Firestore</span>
-        <span class="tag">Realtime DB</span>
-      </div>
+      <div class="sk-desc">Menyimpan dan mengelola data secara realtime dengan Firebase.</div>
+      <div class="tags"><span class="tag">Firebase</span><span class="tag">Firestore</span><span class="tag">Realtime DB</span></div>
     </div>
 
-    <!-- Pentesting -->
     <div class="sk-card rv" style="transition-delay:.24s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">🔓</span>
+      <span class="sk-ico">
+        <!-- Shield / Pentest icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </span>
       <div class="sk-name">Pentesting</div>
-      <div class="sk-desc">
-        Pengujian keamanan hardware (laptop, HP, PC) dan web menggunakan berbagai tools ofensif.
-      </div>
-      <div class="tags">
-        <span class="tag">Metasploit</span>
-        <span class="tag">Nmap</span>
-        <span class="tag">SQLi</span>
-        <span class="tag">Burp Suite</span>
-        <span class="tag">Hydra</span>
-        <span class="tag">Aircrack-ng</span>
-      </div>
+      <div class="sk-desc">Pengujian keamanan hardware (laptop, HP, PC) dan web menggunakan berbagai tools ofensif.</div>
+      <div class="tags"><span class="tag">Metasploit</span><span class="tag">Nmap</span><span class="tag">SQLi</span><span class="tag">Burp Suite</span><span class="tag">Hydra</span><span class="tag">Aircrack-ng</span></div>
     </div>
 
-    <!-- Dev Tools -->
     <div class="sk-card rv" style="transition-delay:.32s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">🛠️</span>
+      <span class="sk-ico">
+        <!-- Terminal / Dev Tools icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+        </svg>
+      </span>
       <div class="sk-name">Dev Tools</div>
-      <div class="sk-desc">
-        Living in the terminal, breathing Git, dan shipping dengan workflow yang rapi.
-      </div>
-      <div class="tags">
-        <span class="tag">Git</span>
-        <span class="tag">VS Code</span>
-        <span class="tag">Linux</span>
-        <span class="tag">NPM</span>
-      </div>
+      <div class="sk-desc">Living in the terminal, breathing Git, dan shipping dengan workflow yang rapi.</div>
+      <div class="tags"><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Linux</span><span class="tag">NPM</span></div>
     </div>
 
-    <!-- Cloud & Deploy -->
     <div class="sk-card rv" style="transition-delay:.4s">
       <div class="sk-shine"></div>
-      <span class="sk-ico">☁️</span>
+      <span class="sk-ico">
+        <!-- Cloud icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+        </svg>
+      </span>
       <div class="sk-name">Cloud &amp; Deploy</div>
-      <div class="sk-desc">
-        Deploy apps yang tetap hidup. Zero downtime is the goal.
-      </div>
-      <div class="tags">
-        <span class="tag">VPS</span>
-        <span class="tag">Vercel</span>
-        <span class="tag">Cloudflare</span>
-        <span class="tag">Nginx</span>
-      </div>
+      <div class="sk-desc">Deploy apps yang tetap hidup. Zero downtime is the goal.</div>
+      <div class="tags"><span class="tag">VPS</span><span class="tag">Vercel</span><span class="tag">Cloudflare</span><span class="tag">Nginx</span></div>
     </div>
 
   </div>
 </section>
 
-<!-- ========================
-     PROJECTS
-========================= -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="slabel" data-n="03">Projects</div>
   <h2 class="stitle">
-    <span class="sw">What</span>&nbsp;
-    <span class="sw" style="transition-delay:.1s">I</span>&nbsp;
-    <span class="sw" style="transition-delay:.2s">Built.</span>
+    <span class="sw">What</span>&nbsp;<span class="sw" style="transition-delay:.1s">I</span>&nbsp;<span class="sw" style="transition-delay:.2s">Built.</span>
   </h2>
-
   <div class="pj-grid">
 
-    <!-- Project 1: WhatsApp Bot -->
     <div class="pj-card rv">
       <div class="pj-thumb">
         <div class="pj-bg t1"><div class="pj-gl"></div></div>
-        <div class="pj-icon">🤖</div>
+        <div class="pj-icon">
+          <!-- Bot / WA icon SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:56px;height:56px;color:var(--cyan)">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <path d="M8 10h.01M12 10h.01M16 10h.01"/>
+          </svg>
+        </div>
         <div class="pj-num">#001</div>
-        <div class="pj-cl"></div>
-        <div class="pj-cr"></div>
+        <div class="pj-cl"></div><div class="pj-cr"></div>
       </div>
       <div class="pj-body">
         <div class="pj-title">WhatsApp Bot</div>
-        <div class="pj-desc">
-          Bot WA multi-fitur berbasis AI. Dari analisis konten sampai kreasi media.
-        </div>
+        <div class="pj-desc">Bot WA multi-fitur berbasis AI. Dari analisis konten sampai kreasi media.</div>
         <ul class="pj-features">
           <li>Chat AI (Groq / Gemini)</li>
           <li>Analisis gambar dengan AI</li>
@@ -342,30 +262,29 @@
           <li>Menu admin — kontrol user &amp; limit</li>
         </ul>
         <div class="pj-foot">
-          <div class="tags">
-            <span class="tag">Node.js</span>
-            <span class="tag">Baileys</span>
-            <span class="tag">HuggingFace</span>
-          </div>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Baileys</span><span class="tag">HuggingFace</span></div>
           <a href="#" class="pj-link">View <span class="pj-arr">↗</span></a>
         </div>
       </div>
     </div>
 
-    <!-- Project 2: Mobile App -->
     <div class="pj-card rv" style="transition-delay:.12s">
       <div class="pj-thumb">
         <div class="pj-bg t2"><div class="pj-gl"></div></div>
-        <div class="pj-icon">📱</div>
+        <div class="pj-icon">
+          <!-- Mobile App icon SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="width:56px;height:56px;color:var(--cyan)">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+            <path d="M9 7h6M9 11h4"/>
+          </svg>
+        </div>
         <div class="pj-num">#002</div>
-        <div class="pj-cl"></div>
-        <div class="pj-cr"></div>
+        <div class="pj-cl"></div><div class="pj-cr"></div>
       </div>
       <div class="pj-body">
         <div class="pj-title">Mobile App Tools</div>
-        <div class="pj-desc">
-          Aplikasi Android dengan kumpulan tools harian yang praktis, dibangun pakai Sketchware.
-        </div>
+        <div class="pj-desc">Aplikasi Android dengan kumpulan tools harian yang praktis, dibangun pakai Sketchware.</div>
         <ul class="pj-features">
           <li>Cek teknik device (RAM, CPU, Baterai)</li>
           <li>Spam NGL anonymous</li>
@@ -375,12 +294,7 @@
           <li>Dark mode &amp; ringan</li>
         </ul>
         <div class="pj-foot">
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Sketchware</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Android</span>
-          </div>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Sketchware</span><span class="tag">Firebase</span><span class="tag">Android</span></div>
           <a href="#" class="pj-link">View <span class="pj-arr">↗</span></a>
         </div>
       </div>
@@ -389,21 +303,14 @@
   </div>
 </section>
 
-<!-- ========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="slabel" data-n="04">Contact</div>
   <h2 class="stitle">
-    <span class="sw">Let's</span>&nbsp;
-    <span class="sw" style="transition-delay:.12s">Build.</span>
+    <span class="sw">Let's</span>&nbsp;<span class="sw" style="transition-delay:.12s">Build.</span>
   </h2>
-
   <div class="ct-wrap">
-    <p class="ct-intro rv">
-      Ada project keren? Mau collab? Atau sekadar ngobrol soal tech &amp; security?<br>
-      Reach out — gue selalu open buat hal yang menarik.
-    </p>
+    <p class="ct-intro rv">Ada project keren? Mau collab? Atau sekadar ngobrol soal tech &amp; security?<br>Reach out — gue selalu open buat hal yang menarik.</p>
 
     <div class="soc-list rv">
 
@@ -411,9 +318,8 @@
       <a href="https://wa.me/yourNumber" target="_blank" class="soc-row">
         <div class="soc-l">
           <span class="soc-ico">
-            <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="16" fill="#25D366"/>
-              <path d="M23.5 8.5A10.44 10.44 0 0 0 16.01 5.5C10.76 5.5 6.5 9.76 6.5 15.01c0 1.68.44 3.32 1.28 4.77L6.4 25.6l5.96-1.56a10.48 10.48 0 0 0 5.64 1.63h.01c5.25 0 9.5-4.26 9.5-9.51 0-2.54-.99-4.93-2.79-6.73l-.22-.23zm-7.49 14.63h-.01a8.69 8.69 0 0 1-4.43-1.21l-.32-.19-3.3.86.88-3.22-.21-.33a8.7 8.7 0 0 1-1.33-4.64c0-4.8 3.91-8.71 8.72-8.71 2.33 0 4.52.91 6.17 2.55a8.66 8.66 0 0 1 2.55 6.17c0 4.81-3.91 8.72-8.72 8.72zm4.78-6.53c-.26-.13-1.55-.77-1.79-.85-.24-.09-.41-.13-.59.13-.17.26-.68.85-.83 1.03-.15.17-.31.2-.57.07-.26-.13-1.1-.41-2.1-1.29-.78-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.16.17-.26.26-.44.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.06-.7.33-.24.26-.93.91-.93 2.22s.95 2.57 1.09 2.75c.13.17 1.88 2.87 4.55 4.02.64.27 1.13.44 1.52.56.64.2 1.22.17 1.68.1.51-.08 1.55-.63 1.77-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3z" fill="white"/>
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color:#25D366">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
             </svg>
           </span>
           <div>
@@ -427,7 +333,13 @@
       <!-- Instagram -->
       <a href="https://instagram.com/xyura011" target="_blank" class="soc-row">
         <div class="soc-l">
-          <span class="soc-ico">📸</span>
+          <span class="soc-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:#E1306C">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </span>
           <div>
             <div class="soc-name">Instagram</div>
             <div class="soc-handle">@xyura011</div>
@@ -439,7 +351,11 @@
       <!-- TikTok -->
       <a href="https://tiktok.com/@icelll_267" target="_blank" class="soc-row">
         <div class="soc-l">
-          <span class="soc-ico">🎵</span>
+          <span class="soc-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+            </svg>
+          </span>
           <div>
             <div class="soc-name">TikTok</div>
             <div class="soc-handle">@icelll_267</div>
@@ -451,7 +367,11 @@
       <!-- YouTube -->
       <a href="https://youtube.com/@Xyura_Mods01" target="_blank" class="soc-row">
         <div class="soc-l">
-          <span class="soc-ico">▶️</span>
+          <span class="soc-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color:#FF0000">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </span>
           <div>
             <div class="soc-name">YouTube</div>
             <div class="soc-handle">@Xyura_Mods01</div>
@@ -463,7 +383,11 @@
       <!-- GitHub -->
       <a href="https://github.com/yourhandle" target="_blank" class="soc-row">
         <div class="soc-l">
-          <span class="soc-ico">🐙</span>
+          <span class="soc-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color:#fff">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+          </span>
           <div>
             <div class="soc-name">GitHub</div>
             <div class="soc-handle">@yourhandle</div>
@@ -476,16 +400,12 @@
 
     <div class="em-box rv">
       <span class="em-addr">hack1222qq@gmail.com</span>
-      <button class="btn-cp" onclick="copyEmail(this)">
-        <span>Copy Email</span>
-      </button>
+      <button class="btn-cp" onclick="copyEmail(this)"><span>Copy Email</span></button>
     </div>
   </div>
 </section>
 
-<!-- ========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 <footer>
   <p>© 2025 <span class="fc">·</span> Designed &amp; Built by Xyura</p>
   <p>Made with <span class="fc">♥</span> &amp; lots of caffeine</p>
