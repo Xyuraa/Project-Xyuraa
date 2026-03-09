@@ -57,11 +57,8 @@ body {
   gap: 1.8rem;
 }
 .ld-logo {
-  font-family: var(--mono);
-  font-size: 1rem;
-  color: var(--cyan);
-  letter-spacing: .3em;
-  text-transform: uppercase;
+  font-family: var(--mono); font-size: 1rem;
+  color: var(--cyan); letter-spacing: .3em; text-transform: uppercase;
 }
 .ld-bar-wrap {
   width: 200px; height: 1px;
@@ -71,14 +68,12 @@ body {
 .ld-bar {
   height: 100%;
   background: linear-gradient(90deg, transparent, var(--cyan), var(--cyan2));
-  width: 0%;
-  box-shadow: 0 0 14px var(--cyan);
+  width: 0%; box-shadow: 0 0 14px var(--cyan);
+  transition: width 0.05s linear;
 }
 .ld-pct {
-  font-family: var(--mono);
-  font-size: .68rem;
-  color: var(--text-muted);
-  letter-spacing: .15em;
+  font-family: var(--mono); font-size: .68rem;
+  color: var(--text-muted); letter-spacing: .15em;
 }
 .ld-lines { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .ld-line {
@@ -105,17 +100,14 @@ body {
 ============================= */
 #c-dot {
   width: 8px; height: 8px;
-  background: var(--cyan);
-  border-radius: 50%;
+  background: var(--cyan); border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9999;
-  mix-blend-mode: screen;
-  will-change: transform;
+  mix-blend-mode: screen; will-change: transform;
 }
 #c-ring {
   width: 38px; height: 38px;
-  border: 1px solid rgba(0,200,255,.45);
-  border-radius: 50%;
+  border: 1px solid rgba(0,200,255,.45); border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9998;
   will-change: transform;
@@ -123,8 +115,7 @@ body {
 }
 #c-ring.hov {
   width: 56px; height: 56px;
-  background: rgba(0,200,255,.05);
-  border-color: var(--cyan);
+  background: rgba(0,200,255,.05); border-color: var(--cyan);
 }
 @media (max-width: 768px) { #c-dot, #c-ring { display: none; } }
 

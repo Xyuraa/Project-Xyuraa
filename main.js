@@ -7,32 +7,24 @@
   const txt = document.getElementById('ld-txt');
   const loader = document.getElementById('loader');
   if (!loader) return;
-
   const msgs = ['INITIALIZING', 'LOADING ASSETS', 'BUILDING UI', 'ALMOST READY'];
   let p = 0, ti = 0;
-
-  function dismiss() {
-    bar.style.width = '100%';
-    pct.textContent = '100%';
-    txt.textContent = 'ALMOST READY';
-    setTimeout(() => {
-      loader.classList.add('ld-exit');
-      setTimeout(() => { loader.style.display = 'none'; }, 900);
-    }, 300);
-  }
-
   const iv = setInterval(() => {
-    p = Math.min(p + Math.random() * 18 + 6, 100);
+    p = Math.min(p + Math.random() * 20 + 8, 100);
     bar.style.width = p + '%';
     pct.textContent = Math.floor(p) + '%';
     if (p > 25 && ti === 0) { txt.textContent = msgs[1]; ti = 1; }
     if (p > 55 && ti === 1) { txt.textContent = msgs[2]; ti = 2; }
     if (p > 80 && ti === 2) { txt.textContent = msgs[3]; ti = 3; }
-    if (p >= 100) { clearInterval(iv); dismiss(); }
-  }, 60);
-
-  // Failsafe: kalau 3 detik masih stuck, force dismiss
-  setTimeout(() => { clearInterval(iv); dismiss(); }, 3000);
+    if (p >= 100) {
+      clearInterval(iv);
+      pct.textContent = '100%';
+      setTimeout(() => {
+        loader.classList.add('ld-exit');
+        setTimeout(() => loader.style.display = 'none', 900);
+      }, 300);
+    }
+  }, 50);
 })();
 
 /* ============================
@@ -42,22 +34,22 @@ const cd = document.getElementById('c-dot');
 const cr = document.getElementById('c-ring');
 let mx = 0, my = 0, tx = 0, ty = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cd.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-});
-
-(function animCursor() {
-  tx += (mx - tx - 19) * 0.1;
-  ty += (my - ty - 19) * 0.1;
-  cr.style.transform = `translate(${tx}px, ${ty}px)`;
-  requestAnimationFrame(animCursor);
-})();
-
-document.querySelectorAll('a, button, .sk-card, .pj-card, .sc, .soc-row').forEach(el => {
-  el.addEventListener('mouseenter', () => cr.classList.add('hov'));
-  el.addEventListener('mouseleave', () => cr.classList.remove('hov'));
-});
+if (cd && cr) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cd.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+  });
+  (function animCursor() {
+    tx += (mx - tx - 19) * 0.1;
+    ty += (my - ty - 19) * 0.1;
+    cr.style.transform = `translate(${tx}px, ${ty}px)`;
+    requestAnimationFrame(animCursor);
+  })();
+  document.querySelectorAll('a, button, .sk-card, .pj-card, .sc, .soc-row').forEach(el => {
+    el.addEventListener('mouseenter', () => cr.classList.add('hov'));
+    el.addEventListener('mouseleave', () => cr.classList.remove('hov'));
+  });
+}
 
 /* ============================
    MAGNETIC BUTTONS
@@ -93,42 +85,45 @@ document.querySelectorAll('.sk-card, .pj-card').forEach(c => {
    PARTICLES
 ============================= */
 const cvs = document.getElementById('pc');
-const ctx = cvs.getContext('2d');
+let ctx = null;
+if (cvs) {
+  ctx = cvs.getContext('2d');
 
-function resizeCanvas() {
-  cvs.width = cvs.offsetWidth;
-  cvs.height = cvs.offsetHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * cvs.width;
-    this.y = Math.random() * cvs.height;
-    this.s = Math.random() * 1.4 + 0.3;
-    this.vx = (Math.random() - 0.5) * 0.4;
-    this.vy = -Math.random() * 0.55 - 0.2;
-    this.o = Math.random() * 0.45 + 0.1;
-    this.life = 0;
-    this.max = Math.random() * 180 + 80;
+  function resizeCanvas() {
+    cvs.width = cvs.offsetWidth;
+    cvs.height = cvs.offsetHeight;
   }
-  update() { this.x += this.vx; this.y += this.vy; this.life++; if (this.life > this.max || this.y < 0) this.reset(); }
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0,200,255,${this.o * (1 - this.life / this.max)})`;
-    ctx.fill();
-  }
-}
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
 
-const pts = Array.from({ length: 80 }, () => new Particle());
-(function animParticles() {
-  ctx.clearRect(0, 0, cvs.width, cvs.height);
-  pts.forEach(p => { p.update(); p.draw(); });
-  requestAnimationFrame(animParticles);
-})();
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * cvs.width;
+      this.y = Math.random() * cvs.height;
+      this.s = Math.random() * 1.4 + 0.3;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = -Math.random() * 0.55 - 0.2;
+      this.o = Math.random() * 0.45 + 0.1;
+      this.life = 0;
+      this.max = Math.random() * 180 + 80;
+    }
+    update() { this.x += this.vx; this.y += this.vy; this.life++; if (this.life > this.max || this.y < 0) this.reset(); }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,200,255,${this.o * (1 - this.life / this.max)})`;
+      ctx.fill();
+    }
+  }
+
+  const pts = Array.from({ length: 80 }, () => new Particle());
+  (function animParticles() {
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    pts.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animParticles);
+  })();
+}
 
 /* ============================
    NAV SCROLL STATE
