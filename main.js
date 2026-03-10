@@ -271,3 +271,94 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) t.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+/* ============================
+   HERO TYPING ANIMATION
+============================= */
+const typedEl = document.getElementById('typed-role');
+if (typedEl) {
+  const roles = [
+    'Web Developer 🌐',
+    'Bot Developer 🤖',
+    'Mobile Dev (Android) 📱',
+    'Pentester 🔓',
+    'Security Enthusiast 🛡️',
+  ];
+  let ri = 0, ci = 0, deleting = false;
+
+  function typeLoop() {
+    const current = roles[ri];
+    if (!deleting) {
+      typedEl.textContent = current.slice(0, ++ci);
+      if (ci === current.length) {
+        deleting = true;
+        setTimeout(typeLoop, 1800);
+        return;
+      }
+      setTimeout(typeLoop, 75);
+    } else {
+      typedEl.textContent = current.slice(0, --ci);
+      if (ci === 0) {
+        deleting = false;
+        ri = (ri + 1) % roles.length;
+        setTimeout(typeLoop, 300);
+        return;
+      }
+      setTimeout(typeLoop, 38);
+    }
+  }
+  setTimeout(typeLoop, 800);
+}
+
+/* ============================
+   ANIMATED SKILL BARS
+============================= */
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const bar = e.target.querySelector('.sk-bar');
+    if (bar) {
+      const target = bar.dataset.w + '%';
+      setTimeout(() => { bar.style.width = target; }, 200);
+    }
+    barObs.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.sk-card').forEach(c => barObs.observe(c));
+
+/* ============================
+   SMOOTH SECTION TRANSITION
+============================= */
+const sections = document.querySelectorAll('section[id]');
+const secObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('sec-visible');
+    }
+  });
+}, { threshold: 0.08 });
+sections.forEach(s => { s.classList.add('sec-hidden'); secObs.observe(s); });
+
+/* ============================
+   PROJECT CARD ENHANCED HOVER
+============================= */
+document.querySelectorAll('.pj-card').forEach(card => {
+  const thumb = card.querySelector('.pj-thumb');
+  const body  = card.querySelector('.pj-body');
+  const icon  = card.querySelector('.pj-icon');
+
+  card.addEventListener('mouseenter', () => {
+    if (thumb) thumb.style.height = '160px';
+    if (icon)  icon.style.transform = 'scale(1.15) translateY(-6px)';
+    if (icon)  icon.style.filter = 'drop-shadow(0 0 16px var(--cyan))';
+    card.style.borderColor = 'var(--cyan)';
+    card.style.boxShadow   = '0 0 32px rgba(0,200,255,.12), 0 24px 64px rgba(0,0,0,.5)';
+  });
+  card.addEventListener('mouseleave', () => {
+    if (thumb) thumb.style.height = '';
+    if (icon)  icon.style.transform = '';
+    if (icon)  icon.style.filter = '';
+    card.style.borderColor = '';
+    card.style.boxShadow   = '';
+  });
+});
